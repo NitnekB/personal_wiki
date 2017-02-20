@@ -1,0 +1,23 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+[user]
+	email = your_mail.com
+	name = your_nickname
+[core]
+	editor = nano
+	excludefile = /Users/your_user/.gitignore_global
+	excludesfile = /Users/your_user/.gitignore_global
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	last = log -1 HEAD
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
