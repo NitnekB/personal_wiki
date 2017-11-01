@@ -7,7 +7,6 @@ Repository for my config files for MAC OS
 ![Screenshot](http://img11.hostingpics.net/pics/775524example.jpg)
 
 
-
 ## Git config
 
 Base for global gitignore
@@ -31,3 +30,7 @@ This is a simple custom zsh theme for Docker and Rails
 v-1.1
 
 - add evaluate function to display the whale when `eval` a docker machine
+
+v-1.2
+
+- refacto and customize more this theme
