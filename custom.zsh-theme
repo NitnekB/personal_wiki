@@ -8,8 +8,15 @@ function evaluateDocker() {
   fi
 }
 
+function evaluateGit() {
+  inside_git_repo="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
+  if [ "$inside_git_repo" ]; then
+    echo "$(git_prompt_info)%{$reset_color%}%{$fg[magenta]%}/%{$reset_color%}"
+  fi
+}
+
 local git_branch='$(git_prompt_status)%{$reset_color%}'
-local git='$(git_prompt_info)%{$reset_color%}%{$fg[magenta]%}/%{$reset_color%}'
+local git='$(evaluateGit)'
 local ruby='%{$fg[red]%}💎 ‹$(rbenv version-name)›'
 local docker='%{$reset_color%}$(evaluateDocker)'
 

@@ -59,3 +59,7 @@ This is a simple custom zsh theme for Docker and Rails
 `v-1.3`
 
 - update layout
+
+`v-1.4`
+
+- Add function to evaluate folder, if it's git repo, then display branch
