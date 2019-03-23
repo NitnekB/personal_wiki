@@ -21,6 +21,16 @@ NB: Don't forget to rename git files with "." at the beginning
 - add alias
 - fix issue with pager
 
+## Gitignore global stuff
+
+`v-1.0`
+
+- ignore macos files
+
+`v-1.1`
+
+- ignore node, elixir and irb generated files
+
 ## Zsh config
 
 This is the `.zshrc` custom config file
