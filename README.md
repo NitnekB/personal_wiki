@@ -18,9 +18,14 @@ NB: Don't forget to rename git files with "." at the beginning
 
 This is the `.zshrc` custom config file
 
-`v1.2`
+`v1.1`
 
 - add some config as plugin, remove annoyind autocorrect zsh feature
+
+`v1.2`
+
+- sort function and alias
+- add new alias
 
 ## ZSH Theme
 
@@ -33,3 +38,7 @@ This is a simple custom zsh theme for Docker and Rails
 `v-1.2`
 
 - refacto and customize more this theme
+
+`v-1.3`
+
+- update layout
