@@ -82,26 +82,35 @@ eval "$(rbenv init -)"
 # disable autocorrect zsh feature
 unsetopt correct_all
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias meteo="clear && curl -4 wttr.in/lille"
-alias -g G='|grep '
-
-alias dm="docker-machine"
-
-# Console Bindkey
-bindkey "^[^[[C" forward-word
-bindkey "^[^[[D" backward-word
+# # # # # # #
+# FUNCTIONS #
+# # # # # # #
 
 # DOCKER fucntions:
 # Function to find IP Address from a container
 function dip() {
   docker inspect --format '{{ .NetworkSettings.IPAddress }}' $1
 }
+
+# # # # #
+# ALIAS #
+# # # # #
+
+alias meteo="clear && curl -4 wttr.in/lille"
+alias -g G='|grep '
+
+# Console Bindkey to jump throw words with `alt` + `<-` | `->`
+bindkey "^[^[[C" forward-word
+bindkey "^[^[[D" backward-word
+
+# Docker alias
+alias dm="docker-machine"
+alias d="docker"
+
+alias ofsu="./ops/feature/up"
+alias ods="./ops/dev/compose"
+alias ofs="./ops/feature/compose"
+alias ots="./ops/test/compose"
+
+# GIT
+alias git='LANG=en_US.UTF-8 git'
