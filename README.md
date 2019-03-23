@@ -14,6 +14,13 @@ NB: Don't forget to rename git files with "." at the beginning
 
 `v-1.0`
 
+- add gitconfig file
+
+`v-1.1`
+
+- add alias
+- fix issue with pager
+
 ## Zsh config
 
 This is the `.zshrc` custom config file
