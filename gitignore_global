@@ -1,2 +1,5 @@
 .idea
 .DS_Store
+.irbrc
+node_modules/
+.elixir_ls/
