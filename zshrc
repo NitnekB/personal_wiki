@@ -51,7 +51,10 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ruby docker docker-compose)
+#
+# Take note that zsh-highlighting plugin requires specific install on
+# ~/.oh-my-zsh/custom/plugins context. See: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#in-your-zshrc
+plugins=(git ruby docker docker-compose zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
