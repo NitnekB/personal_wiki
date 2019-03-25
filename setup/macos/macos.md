@@ -175,6 +175,12 @@ Configuration files:
 - [_gitconfig_ file](../../config/macos/gitconfig)
 - [_gitignore_global_ file](../../config/macos/gitignore_global)
 
+Change language to english using this command:
+
+```bash
+echo "export LANGUAGE='en_US.UTF-8 git'" >> ~/.zshrc
+```
+
 #### Git Flow
 
 [Git Flow](https://danielkummer.github.io/git-flow-cheatsheet/index.html) are a set of git extensions to provide high-level repository operations for Vincent Driessen's branching model.
