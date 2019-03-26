@@ -141,6 +141,14 @@ Here's two cool links to custom your own _terminal_:
 
 [My personal theme](../../config/custom.zsh-theme)
 
+### GnuPG
+
+GnuPG is a complete and free implementation of the OpenPGP standard. it allows you to encrypt and sign your data and communications, mainly over email.
+
+<!--
+TODO: Complete this tutorial
+-->
+
 ### Ruby
 
 There are two main version `Ruby` manager on MacOS, `Rbenv` and `RVM`.
