@@ -206,3 +206,16 @@ brew install git-flow-avh
 You can use this [_cheatsheet_](https://danielkummer.github.io/git-flow-cheatsheet/)
 
 Some usefull [_alias_](https://github.com/akarzim/zsh-git-flow-aliases)
+
+### A good IDE
+
+Usually, I used to use ATOM, which was good enough over the past 3 years. But since, I discovered [VSCode](https://code.visualstudio.com/) which is really good (it's a fork of ATOM after all).
+
+VScode provide a quick setup, using `Crtl` + `Maj` + `P` and search for _code_. But there is an issue about the fact this command is reset after OS reboot (see here: https://github.com/Microsoft/vscode/issues/48124)
+
+To resolve this issue, just add the path manually on `~/.zshrc` or `~/.bash_profile` file:
+
+```bash
+# export vscode path manually since there is a bug with it
+export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+```
