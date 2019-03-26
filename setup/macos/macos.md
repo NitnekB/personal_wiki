@@ -75,6 +75,10 @@ You have to install it manually from [official website](https://www.iterm2.com/)
 
 [Color preset](../../config/preset.itermcolors)
 
+To add custom _colors preset_ on iterm, use `⌘` + `i` to open _preferences_, go on _Colors_ tab and _import_ custom `preset.itermcolors` file. To use it permanently, go back to _General_ tab and click on `Copy Current Settings to Selected Profile` button
+
+![Screenshot](../images/iterm_config.png)
+
 #### ZSH
 
 ZSH is a command prompt from [_Bourne Shell_](http://www.grymoire.com/Unix/Sh.html) family.
@@ -136,6 +140,14 @@ Here's two cool links to custom your own _terminal_:
 - https://www.synbioz.com/blog/astuces_zsh_plugins_git_oh_my_zsh
 
 [My personal theme](../../config/custom.zsh-theme)
+
+### GnuPG
+
+GnuPG is a complete and free implementation of the OpenPGP standard. it allows you to encrypt and sign your data and communications, mainly over email.
+
+<!--
+TODO: Complete this tutorial
+-->
 
 ### Ruby
 
@@ -206,3 +218,16 @@ brew install git-flow-avh
 You can use this [_cheatsheet_](https://danielkummer.github.io/git-flow-cheatsheet/)
 
 Some usefull [_alias_](https://github.com/akarzim/zsh-git-flow-aliases)
+
+### A good IDE
+
+Usually, I used to use ATOM, which was good enough over the past 3 years. But since, I discovered [VSCode](https://code.visualstudio.com/) which is really good (it's a fork of ATOM after all).
+
+VScode provide a quick setup, using `Crtl` + `Maj` + `P` and search for _code_. But there is an issue about the fact this command is reset after OS reboot (see here: https://github.com/Microsoft/vscode/issues/48124)
+
+To resolve this issue, just add the path manually on `~/.zshrc` or `~/.bash_profile` file:
+
+```bash
+# export vscode path manually since there is a bug with it
+export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+```

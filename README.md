@@ -1,6 +1,6 @@
 # Personal wiki
 
-This project aims to gather all knowledge about setup, configuration, tutorial and knowledge about computer engineering.
+This project aims to gather all knowledge about setup, configuration, tutorial and things to know about computer engineering.
 
 ## Setup
 
