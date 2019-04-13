@@ -231,3 +231,16 @@ To resolve this issue, just add the path manually on `~/.zshrc` or `~/.bash_prof
 # export vscode path manually since there is a bug with it
 export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 ```
+
+#### Specific configuration
+
+Add an option to create an new empty line at the end on a file when saving.
+
+`⇧ MAJ` + `⌘ command` + `p` to open the _command palette_, then type `Preferences: Open Settings (JSON)` and add this line to the JSON file:
+
+```json
+{
+    ...,
+    "files.insertFinalNewline": true
+}
+```
