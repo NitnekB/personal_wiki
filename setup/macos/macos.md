@@ -10,7 +10,7 @@ What you need to know to reinstall MacOS machine from scratch
 * update MacOS regularly
 * update your soft and tools regularly too
 * install Xcode (`xcode-select --install`)
-* install your preferate nav, I use [Chrome](https://www.google.com/chrome/browser/desktop/index.html) ¯\_(ツ)_/¯
+* install your preferate nav, I use [Chrome](https://www.google.com/chrome/browser/desktop/index.html)   ¯`\`_(ツ)_/¯
 * install [iTerm2](https://iterm2.com/) to replace standard _Terminal_
 * install [GPG Keychain](https://gpgtools.org/keychain/index.html) to encrypt/decrypt emails
 * install [Slack](https://slack.com/intl/fr-fr/downloads/osx) cause, you know, you have to communicate sometimes
@@ -230,4 +230,17 @@ To resolve this issue, just add the path manually on `~/.zshrc` or `~/.bash_prof
 ```bash
 # export vscode path manually since there is a bug with it
 export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+```
+
+#### Specific configuration
+
+Add an option to create an new empty line at the end on a file when saving.
+
+`⇧ MAJ` + `⌘ command` + `p` to open the _command palette_, then type `Preferences: Open Settings (JSON)` and add this line to the JSON file:
+
+```json
+{
+    ...,
+    "files.insertFinalNewline": true
+}
 ```
