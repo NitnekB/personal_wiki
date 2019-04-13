@@ -2,6 +2,8 @@
 
 Setup operating system with cool _apps_ and _toolings_
 
+- [MacOs Setup](macos/macos.md)
+
 ## MacOS setup
 
 `v-1.0`
