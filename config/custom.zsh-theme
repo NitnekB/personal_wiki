@@ -20,7 +20,7 @@ local git='$(evaluateGit)'
 local ruby='%{$fg[red]%}💎 ‹$(rbenv version-name)›'
 local docker='%{$reset_color%}$(evaluateDocker)'
 
-PROMPT='%n%{$fg[magenta]%}:%{$reset_color%}%{$fg[$NCOLOR]%}%c ➤ %{$reset_color%}'
+PROMPT='%{$fg[white]%}%n%{$fg[magenta]%}:%{$reset_color%}%{$fg[$NCOLOR]%}%c ➤ %{$reset_color%} '
 RPROMPT="${git} ${ruby} ${docker}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}➦ %{$fg[yellow]%}"
