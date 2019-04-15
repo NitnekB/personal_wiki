@@ -145,9 +145,7 @@ Here's two cool links to custom your own _terminal_:
 
 GnuPG is a complete and free implementation of the OpenPGP standard. it allows you to encrypt and sign your data and communications, mainly over email.
 
-<!--
-TODO: Complete this tutorial
--->
+See according section [here](gpg_keychain.md)
 
 ### Ruby
 
