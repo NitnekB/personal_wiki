@@ -67,3 +67,10 @@ This is a simple custom zsh theme for Docker and Rails
 `v-1.5`
 
 - Change yellow color to `#ffcc00`
+
+`v-1.6`
+
+- Change blue color to `#55f7f7`
+- Change white color to `#efefef`
+- Change background color to brown `#3f3000`
+- Update `custom.zsh-theme` file adding space to command entrypoint
