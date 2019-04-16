@@ -1,12 +1,9 @@
 # Personal wiki
 
-This project aims to gather all knowledge about setup, configuration, tutorial and things to know about computer engineering.
+This project aims to gather all knowledge about setup, configuration, tutorial and things I know about computer engineering.
 
-## Setup
+Entry point for this wiki: https://nitnekb.github.io/personal_wiki/
 
-From dust to ground, here all we need to know to setup new machine,
-please consult [`setup` README](setup/README.md)
+Many thx to free _Github_ hosting!
 
-## Config
-
-Please consult the [`config` readme](config/README.md)
+<img src="https://img.icons8.com/doodle/48/000000/heart-balloon.png">
