@@ -232,13 +232,28 @@ export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/
 
 #### Specific configuration
 
-Add an option to create an new empty line at the end on a file when saving.
+Add an option to create an new empty line at the end on a file when saving,
+and to add specific _tabSize_ settings:
 
 `⇧ MAJ` + `⌘ command` + `p` to open the _command palette_, then type `Preferences: Open Settings (JSON)` and add this line to the JSON file:
 
 ```json
 {
     ...,
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "editor.tabSize": 2
 }
 ```
+
+#### Plugins
+
+VSCode use plugins to implement extra functionalities, such as autocompletion, UI-UX improvment, prefered programming language features, etc.
+
+Here's the best I use:
+
+- Docker
+- file-icons
+- Ruby
+- Ruby Markers
+- Ruby on Rails
+- shellman

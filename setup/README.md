@@ -17,3 +17,7 @@ Setup operating system with cool _apps_ and _toolings_
 `v-1.2`
 
 - Add GPG setup and configuration
+
+`v-1.3`
+
+- Add some VSCode config and information
