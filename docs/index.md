@@ -20,6 +20,10 @@ Everything needed to reinstall MacOs easily
 - [_Custom zsh theme_ file](setup/macos/config/custom.zsh-theme)
 - [_Zshrc_ file](setup/macos/config/zshrc)
 
+Here how the terminal looks like
+
+![Screenshot](setup/images/iterm_session.png)
+
 ## Tutorials
 
 WIP
