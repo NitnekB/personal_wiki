@@ -4,12 +4,12 @@
 	branch = auto
 	ui = true
 [user]
-	email = your_mail.com
-	name = your_nickname
+	email = <YOUR_GIT_MAIL>.com
+	name = <YOUR_NICKNAME>
 [core]
 	editor = nano
-	excludefile = /Users/your_user/.gitignore_global
-	excludesfile = /Users/your_user/.gitignore_global
+	excludefile = /Users/<YOUR_ACCOUNT>/.gitignore_global
+	excludesfile = /Users/<YOUR_ACCOUNT>/.gitignore_global
 [apply]
 	whitespace = strip
 [alias]
