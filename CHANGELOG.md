@@ -9,6 +9,18 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 ### Removed
 
+
+
+## [0.3.1] - 2019-04-17
+
+### Changed
+
+- Add `.md` extension on configuration files to see instead of downloading them
+
+### Fixed
+
+- Fix broken links
+
 ## [0.3.0] - 2019-04-16
 
 ### Added

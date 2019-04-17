@@ -73,7 +73,7 @@ It sends old terminal back to middle age, and continue to provide improvements
 
 You have to install it manually from [official website](https://www.iterm2.com/)
 
-[Color preset](../../config/preset.itermcolors)
+[Color preset](config/preset.itermcolors.md)
 
 To add custom _colors preset_ on iterm, use `⌘` + `i` to open _preferences_, go on _Colors_ tab and _import_ custom `preset.itermcolors` file. To use it permanently, go back to _General_ tab and click on `Copy Current Settings to Selected Profile` button
 
@@ -120,7 +120,7 @@ zsh-newuser-install -f
 
 Configuration file:
 
-- [_zshrc_ file](../../config/zshrc)
+- [_zshrc_ file](config/zshrc.md)
 
 ##### OhMyZsh
 
@@ -139,7 +139,7 @@ Here's two cool links to custom your own _terminal_:
 - https://www.synbioz.com/blog/astuces_zsh_installer_et_comprendre_oh_my_zsh
 - https://www.synbioz.com/blog/astuces_zsh_plugins_git_oh_my_zsh
 
-[My personal theme](../../config/custom.zsh-theme)
+[My personal theme](config/custom.zsh-theme.md)
 
 ### GnuPG
 
@@ -182,8 +182,8 @@ brew install git
 
 Configuration files:
 
-- [_gitconfig_ file](../../config/macos/gitconfig)
-- [_gitignore_global_ file](../../config/macos/gitignore_global)
+- [_gitconfig_ file](config/gitconfig.md)
+- [_gitignore_global_ file](config/gitignore_global.md)
 
 Change language to english using this command:
 

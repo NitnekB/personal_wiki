@@ -1,3 +1,6 @@
+# `~/.zshrc` file configuration
+
+```bash
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -117,3 +120,4 @@ alias ots="./ops/test/compose"
 
 # GIT
 alias git='LANG=en_US.UTF-8 git'
+```
