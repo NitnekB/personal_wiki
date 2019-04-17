@@ -1,3 +1,8 @@
+# `~/.oh-my-zsh/themes/custom.zsh-theme` file configuration
+
+Take care to use it on `~/.zshrc` file!
+
+```bash
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="yellow"; fi
 
 function evaluateDocker() {
@@ -33,4 +38,5 @@ ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%} ✹"
 ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✖"
 ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} ➜"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"mar
+```

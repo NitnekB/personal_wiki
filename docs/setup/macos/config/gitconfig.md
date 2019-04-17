@@ -1,3 +1,6 @@
+# `~/.gitconfig` file settings
+
+```bash
 [color]
 	diff = auto
 	status = auto
@@ -28,3 +31,4 @@
 	smudge = git media smudge %f
 [pager]
 	branch = cat
+```

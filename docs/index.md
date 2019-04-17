@@ -14,11 +14,11 @@ Everything needed to reinstall MacOs easily
 
 ### Configurations
 
-- [_Git config_ file](setup/macos/config/gitconfig)
-- [_Gitignore global_ file](setup/macos/config/gitignore_global)
-- [Itermcolors preset](setup/macos/config/preset.itermcolors)
-- [_Custom zsh theme_ file](setup/macos/config/custom.zsh-theme)
-- [_Zshrc_ file](setup/macos/config/zshrc)
+- [`~/.gitconfig` file](setup/macos/config/gitconfig.md)
+- [~/.gitignore_global file](setup/macos/config/gitignore_global.md)
+- [Itermcolors preset](setup/macos/config/preset.itermcolors.md)
+- [`~/.oh-my-zsh/themes/custom.zsh-theme` file](setup/macos/config/custom.zsh-theme.md)
+- [`~/.zshrc` file](setup/macos/config/zshrc.md)
 
 Here how the terminal looks like
 
