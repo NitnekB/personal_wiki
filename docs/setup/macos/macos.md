@@ -73,7 +73,7 @@ It sends old terminal back to middle age, and continue to provide improvements
 
 You have to install it manually from [official website](https://www.iterm2.com/)
 
-[Color preset](config/preset.itermcolors.md)
+[Download `preset.itermcolors` file](config/preset.itermcolors)
 
 To add custom _colors preset_ on iterm, use `⌘` + `i` to open _preferences_, go on _Colors_ tab and _import_ custom `preset.itermcolors` file. To use it permanently, go back to _General_ tab and click on `Copy Current Settings to Selected Profile` button
 
