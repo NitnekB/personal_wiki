@@ -9,7 +9,11 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 ### Removed
 
+## [0.3.2] - 2019-04-22
 
+### Changed
+
+- Restaure original `preset.itermcolors` file to download it easily
 
 ## [0.3.1] - 2019-04-17
 
