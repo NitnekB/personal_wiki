@@ -29,4 +29,5 @@ Not only React benefits from great community but knowing this framework will gra
 
 Here's some section to learn or remember specific particularities about React
 
+* [JSX](react/jsx.md)
 * [State](react/state.md)
