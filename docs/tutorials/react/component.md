@@ -74,7 +74,7 @@ class Picture extends React.Component {
     return (
       <div>
         <h1>Public Gare</h1>
-        <img 
+        <img
           src={picture.src}
           alt={picture.alt}
           width={picture.width} />

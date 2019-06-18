@@ -121,7 +121,7 @@ This is not a valid JSX:
 
 ~~~js
 const wrongExample = (
-  <p>Hello</p> 
+  <p>Hello</p>
   <p>World</p>
 )
 ~~~
@@ -131,7 +131,7 @@ But this is valid:
 ~~~js
 const goodExample = (
   <div>
-    <p>Hello</p> 
+    <p>Hello</p>
     <p>World</p>
   </div>
 )
@@ -143,7 +143,7 @@ Also, React allows to use a common pattern which called [_Fragment_](https://rea
 render() {
   return (
     <React.Fragment>
-      <p>Hello</p> 
+      <p>Hello</p>
       <p>World</p>
     </React.Fragment>
   );
