@@ -29,4 +29,4 @@ Here how the terminal looks like
 
 ## Tutorials
 
-WIP
+[Entrypoint for tutorials](tutorials/index.md)
