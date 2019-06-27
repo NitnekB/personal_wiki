@@ -234,7 +234,7 @@ A React component should use state to store information that the component itsel
 
 This is the main difference between a `props` and a `state`.
 
-## Event handler
+### Event handler
 
 To make a child component update its parent’s state, we must define a state-changing method on the parent.
 
@@ -268,7 +268,7 @@ class Parent extends Component {
     // We have to bind this on our method
     // Remember we can prevent this behaviour using ES5+ with arrow function
 		this.changeName = this.changeName.bind(this);
-    this.state = { name: 'Frarthur' };
+    this.state = { name: 'Quentin' };
   }
   
   // New event handler method to update the state of name attribute
@@ -338,3 +338,67 @@ export class Child extends Component {
 Event handler are very usefull to apply changes on several part of an application.
 As we understand, we should never update a prop.
 React _state_ concept allows developers to manage data update everywhere without any trouble.
+
+### Separate display from update with multiple children components
+
+The idea is to separate updating component from the displayed one.
+To make that happened, we'll create a new component `DisplayChild`.
+
+~~~js
+// DisplayChild.js
+import React, { Component } from 'react';
+
+export class DisplayChild extends Component {
+  render() {
+    const name = this.props.name;
+    return (
+      <div>
+        <h1>Hey, I'm {name}!</h1>
+        <h2>Don't you think {name} is a great name?</h2>
+      </div>
+    );
+  }
+}
+~~~
+
+Then we must applied some change on parent class
+
+~~~js
+// Parent.js
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { Child } from './Child';
+import { DisplayChild } from './DisplayChild';
+
+class Parent extends Component {
+  constructor(props) {
+    super(props);
+    this.changeName = this.changeName.bind(this);
+    this.state = { name: 'Quentin' };
+  }
+
+  changeName(name) {
+    this.setState({
+      name: name
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <!-- Child component allows to update content -->
+        <Child onChange={this.changeName} />
+        <!-- DisplayChild component allows to display current state data name -->
+        <DisplayChild name={this.state.name} />
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <Parent />,
+  document.getElementById('app')
+);
+~~~
+
+Here's the most common React pattern.
