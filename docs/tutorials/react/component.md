@@ -401,4 +401,4 @@ ReactDOM.render(
 );
 ~~~
 
-Here's the most common React pattern.
+Here's the most common React pattern which refers to _Single-Responsibility Principle_ (the _S_ from SOLID principles).
