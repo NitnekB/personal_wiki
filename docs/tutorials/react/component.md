@@ -402,3 +402,77 @@ ReactDOM.render(
 ~~~
 
 Here's the most common React pattern which refers to _Single-Responsibility Principle_ (the _S_ from SOLID principles).
+
+### Separate rendre from displayed logic
+
+One of the most common pattern in React is to separate the display logic from render on specific class.
+
+You'll often find displayed logic on `./containers/` folder and the render on `components` folder.
+
+## Stateless Functional Components
+
+Stateless Functional Components is how we call a component without any declared class in React ecosystem.
+
+It works very well with props too, as you can see in this example below:
+
+~~~js
+// Normal way to display a prop
+export class MyClass extends React.component {
+  render() {
+    return <h2>{this.props.name}</h2>;
+  }
+}
+
+// Stateless functional component way to display a prop
+export const MyClass = (props) => {
+  return <h2>{props.name}</h2>;
+}
+~~~
+
+The `render` logic would be the same for both cases
+
+~~~js
+ReactDOM.render(
+  <MyClass name={name} />,
+  document.getElementById('app')
+);
+~~~
+
+## PropTypes
+
+PropTypes is a React feature that focus on _props_. It's really useful for two reasons.
+
+* Validation can ensure that your props are doing what they’re supposed to be doing. If props are missing, or if they’re present but they aren’t what you’re expecting, then a warning will print in the console.
+* Documenting props makes it easier to glance at a file and quickly understand the component class inside. When you have a lot of files, and you will, this can be a huge benefit.
+
+This `Example` class below use **`propTypes` object** to validate the type of the `title` prop:
+
+~~~js
+import React, { Component } from 'react';
+
+export class Example extends Component {
+  render() {
+    return (
+      <h1>{this.props.title}</h1>
+      <h2>{this.props.description}</h2>
+    );
+  }
+}
+
+Example.propTypes = {
+  title: React.PropTypes.string.isRequired,
+  description: React.PropTypes.string
+};
+~~~
+
+Notice the expression `this.props.title`.
+Somewhere, at some time, this code is expected to execute: `<Example message="something" />`.
+
+The first step to making a propType is to search for a property named propTypes on the instructions object. If there isn’t one, make one! You will have to declare it after the close of your component declaration, since it will be a **static property**.
+
+The second step is to add a property to the propTypes object. For each prop that your component class expects to receive, there can be one property on your propTypes object.
+Notice also the `.isRequired` to the `title` prop.
+
+Also, this work the same for React component class as for Stateless Functional Components.
+
+To know more about this React functionality, see this [official documentation](https://fr.reactjs.org/docs/typechecking-with-proptypes.html).
