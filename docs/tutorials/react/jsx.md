@@ -226,3 +226,73 @@ As a matter of fact, the compiler transforms the JSX element into `React.createE
 ---
 
 To learn more about JSX, fell free to read the [official Introduction](https://reactjs.org/docs/introducing-jsx.html).
+
+## JavaScript on JSX
+
+Sometimes, we have to add some real JavaScript into JSX.
+
+For example, we could add some style on a `div` such as:
+
+~~~html
+<div style="color: darkred;">Hello world</div>
+~~~
+
+This works in pure HTML, but not in JSX.
+
+Here's what we need to do to make it work with JSX
+
+~~~js
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const myDiv = <div style={{ color: 'darkred' }}>Hello World</div>;
+
+ReactDOM.render(
+	myDiv,
+	document.getElementById('app')
+);
+~~~
+
+Notice the double curly braces `style={{ color: 'darkred' }}`.
+
+* The outer curly braces inject JavaScript into JSX.
+* The inner curly braces create a JavaScript object literal.
+
+If you inject an object literal into JSX, and your entire injection is only that object literal, then you will end up with double curly braces.
+
+### Another approach using variable and object
+
+Instead of using double curly braces, we can use variables and objects such as this example below
+
+~~~js
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const styles = {
+  background: 'darkred',
+  color:      'whitesmoke',
+  marginTop:  '100px'
+}
+// Replace that
+const myDiv = <h1 style={{background: 'darkred', color: 'whitesmoke', marginTop: '100px'}}>Hello World</h1>;
+// Byt that
+const myDiv = <h1 style={styles}>Hello World</h1>;
+
+ReactDOM.render(
+	myDiv,
+	document.getElementById('app')
+);
+~~~
+
+Notice that style attribute use _camelCase_ instead of traditional _hyphenated-lowercase_.
+This is React stuff.
+
+Also, there is no need to use quote when we need to specify `px` value.
+
+~~~js
+{ marginTop: 30 }
+// It the same as
+{ marginTop: '30px' }
+// But we need to specify another unity
+{ marginTop: '2em' }
+~~~

@@ -167,4 +167,312 @@ class Example extends React.Component {
 `.handleAlert()` is being used as an event handler.
 It will be called any time that a user hovers over the rendered <div></div>.
 
+## Patterns
 
+Like for any programming langages and frameworks, React allows developers to use
+pattern in order to enhance the way they work.
+Here's some common patterns that are commonly used with React.
+
+### Stateless Components Inherit From Stateful Components
+
+Programming pattern uses two React components:
+
+* a stateful component: _Stateful_ describes any component that has a state property
+* a stateless component: _Stateless_ describes any component that does not
+
+Let's demonstrate how it works with two classes `Parent` and `Child`.
+
+~~~js
+// Parent.js
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+// Import Child component with dynamic path
+import { Child } from './Child';
+
+class Parent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'Quentin'
+    }
+  }
+
+  render() {
+    return <Child name={this.state.name} />;
+  }
+}
+
+ReactDOM.render(<Parent />, document.getElementById('app'));
+
+
+// Child.js
+import React, { Component } from 'react';
+
+// Use export keyword to allows Parent class to render the Child
+export class Child extends Component {
+  render() {
+    // Display props.name from Parent class
+    return <h1>Hey, my name is {this.props.name}!</h1>;
+  }
+}
+~~~
+
+NB: Any component rendered by a different component must be included in an export statement.
+
+#### Don't Update props
+
+A component can change its state by calling `this.setState()`.
+But what abut _props_? Can we update them?
+
+The answer is obviously not.
+A component should never update `this.props`.
+
+If a component can’t change its props, then what are props for?
+A React component should use props to store information that can be changed, but only by a different component.
+
+A React component should use state to store information that the component itself can change.
+
+This is the main difference between a `props` and a `state`.
+
+### Event handler
+
+To make a child component update its parent’s state, we must define a state-changing method on the parent.
+
+On the above example, we defined a class method `changeAttr()` that takes a new attribute value and update the state of this attribute.
+
+~~~js
+changeAttr(newAttrValue) {
+  this.setState({
+    attr: newAttrValue
+  });
+}
+~~~
+
+We now need to make sure that the `changeAttr()` method will always refer to the instance of Parent class, even when we pass it down to the Child component.
+
+In the constructor method of Parent, bind `this.changeAttr` to the current value of this and store it in `this.changeAttr`.
+
+Now we need to pass our new update event function into Child object in `render()`method.
+
+If we take back our previous example, here's how it would be elvolved:
+
+~~~js
+// Parent.js
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { Child } from './Child';
+
+class Parent extends Component {
+  constructor(props) {
+    super(props);
+    // We have to bind this on our method
+    // Remember we can prevent this behaviour using ES5+ with arrow function
+		this.changeName = this.changeName.bind(this);
+    this.state = { name: 'Quentin' };
+  }
+  
+  // New event handler method to update the state of name attribute
+  changeName(name) {
+    this.setState({
+      name: name
+    });
+  }
+
+  render() {
+    // Add onChange attribute with method call on value
+    return <Child name={this.state.name} onChange={this.changeName} />
+  }
+}
+
+// Render JSX using ReactDOM
+ReactDOM.render(
+	<Parent />,
+	document.getElementById('app')
+);
+~~~
+
+Now we also need to update the Child class to manage updated attribute
+
+~~~js
+// Child.js
+import React, { Component } from 'react';
+
+export class Child extends Component {
+  constructor(props) {
+    super(props);
+    // We have to bind this on our method
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  // Define handleChange method that takes an event
+  // and call onChange with new attribute from user to apply new change
+  handleChange(evt) {
+    const name = evt.target.value;
+    this.props.onChange(name);
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>
+          Hello, I'm {this.props.name}!
+        </h1>
+        <!--
+          Use select to choose a name
+          Define onChange attribute and use handleChange method as value
+        -->
+        <select id="names" onChange={this.handleChange}>
+          <option value="Quentin">
+            Quentin
+          </option>
+          <option value="Romain">
+            Romain
+          </option>
+        </select>
+      </div>
+    );
+  }
+}
+~~~
+
+Event handler are very usefull to apply changes on several part of an application.
+As we understand, we should never update a prop.
+React _state_ concept allows developers to manage data update everywhere without any trouble.
+
+### Separate display from update with multiple children components
+
+The idea is to separate updating component from the displayed one.
+To make that happened, we'll create a new component `DisplayChild`.
+
+~~~js
+// DisplayChild.js
+import React, { Component } from 'react';
+
+export class DisplayChild extends Component {
+  render() {
+    const name = this.props.name;
+    return (
+      <div>
+        <h1>Hey, I'm {name}!</h1>
+        <h2>Don't you think {name} is a great name?</h2>
+      </div>
+    );
+  }
+}
+~~~
+
+Then we must applied some change on parent class
+
+~~~js
+// Parent.js
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { Child } from './Child';
+import { DisplayChild } from './DisplayChild';
+
+class Parent extends Component {
+  constructor(props) {
+    super(props);
+    this.changeName = this.changeName.bind(this);
+    this.state = { name: 'Quentin' };
+  }
+
+  changeName(name) {
+    this.setState({
+      name: name
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <!-- Child component allows to update content -->
+        <Child onChange={this.changeName} />
+        <!-- DisplayChild component allows to display current state data name -->
+        <DisplayChild name={this.state.name} />
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <Parent />,
+  document.getElementById('app')
+);
+~~~
+
+Here's the most common React pattern which refers to _Single-Responsibility Principle_ (the _S_ from SOLID principles).
+
+### Separate rendre from displayed logic
+
+One of the most common pattern in React is to separate the display logic from render on specific class.
+
+You'll often find displayed logic on `./containers/` folder and the render on `components` folder.
+
+## Stateless Functional Components
+
+Stateless Functional Components is how we call a component without any declared class in React ecosystem.
+
+It works very well with props too, as you can see in this example below:
+
+~~~js
+// Normal way to display a prop
+export class MyClass extends React.component {
+  render() {
+    return <h2>{this.props.name}</h2>;
+  }
+}
+
+// Stateless functional component way to display a prop
+export const MyClass = (props) => {
+  return <h2>{props.name}</h2>;
+}
+~~~
+
+The `render` logic would be the same for both cases
+
+~~~js
+ReactDOM.render(
+  <MyClass name={name} />,
+  document.getElementById('app')
+);
+~~~
+
+## PropTypes
+
+PropTypes is a React feature that focus on _props_. It's really useful for two reasons.
+
+* Validation can ensure that your props are doing what they’re supposed to be doing. If props are missing, or if they’re present but they aren’t what you’re expecting, then a warning will print in the console.
+* Documenting props makes it easier to glance at a file and quickly understand the component class inside. When you have a lot of files, and you will, this can be a huge benefit.
+
+This `Example` class below use **`propTypes` object** to validate the type of the `title` prop:
+
+~~~js
+import React, { Component } from 'react';
+
+export class Example extends Component {
+  render() {
+    return (
+      <h1>{this.props.title}</h1>
+      <h2>{this.props.description}</h2>
+    );
+  }
+}
+
+Example.propTypes = {
+  title: React.PropTypes.string.isRequired,
+  description: React.PropTypes.string
+};
+~~~
+
+Notice the expression `this.props.title`.
+Somewhere, at some time, this code is expected to execute: `<Example message="something" />`.
+
+The first step to making a propType is to search for a property named propTypes on the instructions object. If there isn’t one, make one! You will have to declare it after the close of your component declaration, since it will be a **static property**.
+
+The second step is to add a property to the propTypes object. For each prop that your component class expects to receive, there can be one property on your propTypes object.
+Notice also the `.isRequired` to the `title` prop.
+
+Also, this work the same for React component class as for Stateless Functional Components.
+
+To know more about this React functionality, see this [official documentation](https://fr.reactjs.org/docs/typechecking-with-proptypes.html).
