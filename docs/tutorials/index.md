@@ -32,3 +32,8 @@ Here's some section to learn or remember specific particularities about React
 * [JSX](react/jsx.md)
 * [Component](react/component.md)
 * [State](react/state.md)
+
+
+## Ruby
+
+* [Ruby](ruby/language.md)
