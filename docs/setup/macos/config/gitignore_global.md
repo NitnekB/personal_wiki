@@ -8,4 +8,7 @@ Don't forget to active it on `~/.gitconfig` file
 .irbrc
 node_modules/
 .elixir_ls/
+.vscode/
+.dynamodb
+.dynamodb/
 ```
